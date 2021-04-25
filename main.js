@@ -1,13 +1,13 @@
 // JS CODE
 // Index koppelen aan main.js script tag onderin index.html
 // SCRIPT
-// 1. Sla de referentie naar het gebruikersnaam-veld op
+// sla de referenties op naar de inputvelden -> label
 const usernameInput = document.getElementById('input-username');
 
-// 2. Sla de referentie naar het gebruikersnaam-waarschuwing element op
+// sla de referenties op naar de warning-messages --> P element
 const usernameWarning = document.getElementById('username-warning');
 
-// 3. Zet een event listener op het gebruikersnaam-veld
+// voeg eventlisteners toe op de inputvelden
 usernameInput.addEventListener("keyup", checkUsername);
 
 // 4. Maak een functie die de event listener kan aanroepen als de gebruiker input geeft
@@ -25,5 +25,27 @@ function checkUsername (e) {
 
 
 // 8. Herhaal deze stappen voor het wachtwoord
+
+
+// sla de referenties op naar de inputvelden -> van/naar label in html
+const passwordInput = document.getElementById("input-password");
+// sla de referenties op naar de warning-messages -> van/naar p element in html
+const passwordWarning = document.getElementById("password-warning")
+
+// voeg een eventlistener toe op de inputvelden - key is event, listener is de functie te maken
+passwordInput.addEventListener("keyup", checkPassword);
+
+// schrijf een functie die de password input checkt en door de eventlistener aangeroepen wordt
+function checkPassword (e) {
+    // check of de input minimaal 6 tekens heeft -> geen warning
+    if (e.target.value === "" || e.target.value.length > 6) {
+        // geen melding dus
+        passwordWarning.textContent = "";
+    } else {
+        // geen een melding als het niet correct is
+        passwordWarning.textContent = "De minimale invoer is 6 tekens"
+    }
+}
+
 
 
